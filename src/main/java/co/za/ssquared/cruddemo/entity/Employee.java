@@ -19,6 +19,7 @@ public class Employee {
     private String lastName;
     @Column(name = "email")
     private String email;
+    private Address address;
 
     //define constructors
     public Employee(){
@@ -66,6 +67,13 @@ public class Employee {
         this.email = email;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     //toString
 
