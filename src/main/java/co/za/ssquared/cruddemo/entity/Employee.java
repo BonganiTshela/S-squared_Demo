@@ -1,11 +1,11 @@
 package co.za.ssquared.cruddemo.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "employee")
-public class Employee {
-
+public class Employee implements Serializable {
 
     //define fields
 
@@ -13,12 +13,20 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+
+
     @Column(name = "first_name")
     private String firstName;
+
+
     @Column(name = "last_name")
     private String lastName;
+
     @Column(name = "email")
     private String email;
+
+    @OneToOne
+    @JoinColumn(name = "address_id")
     private Address address;
 
     //define constructors
