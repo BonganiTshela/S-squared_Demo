@@ -1,3 +1,0 @@
-Feature: Get Features
-
-  Scenario
