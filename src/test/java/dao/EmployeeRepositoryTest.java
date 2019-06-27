@@ -16,7 +16,7 @@ public class EmployeeRepositoryTest extends CruddemoApplicationTests {
 
     @Test
     public void testFindAll() {
-        List<Employee> employees = employeeRepository.findAll();
+        List<Employee> employees = (List<Employee>) employeeRepository.findAll();
         assertNotNull(employees);
     }
 }

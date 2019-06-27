@@ -26,7 +26,7 @@ public class Employee implements Serializable {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address addressIndex;
 
     //define constructors

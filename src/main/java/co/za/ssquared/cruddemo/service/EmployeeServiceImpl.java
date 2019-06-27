@@ -21,8 +21,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    @Transactional
     public List<Employee> findAll() {
-        return employeeRepository.findAll();
+        return (List<Employee>) employeeRepository.findAll();
     }
 
     @Override
@@ -35,7 +36,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (result.isPresent())
         {
             tempEmp = result.get();
-        }else{
+        }
+        else{
             throw new RuntimeException("Did not find employee id - " + theId);
 
         }

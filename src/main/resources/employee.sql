@@ -29,8 +29,6 @@ CREATE TABLE `employee` (
   FOREIGN KEY (`address_id`) REFERENCES address (`id`) ON DELETE CASCADE
 ) ;
 
-
-
 --
 -- Data for table `employee`
 --

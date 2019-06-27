@@ -1,7 +1,5 @@
-package cucmberOptions;
+package co.za.ssquared.cruddemo.cucumberOptions;
 
-
-//use cucumber options annotation
 
 import co.za.ssquared.cruddemo.CruddemoApplicationTests;
 import cucumber.api.CucumberOptions;
@@ -10,7 +8,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/features",
+        features = "src/test/resources/features",
         glue = "co.za.ssquared.cruddemo.cucumber.module.employee.steps",
 
         plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json", "junit:target/cukes.xml"}

@@ -1,19 +1,35 @@
 package co.za.ssquared.cruddemo.cucumber.module.employee.core;
 
-import co.za.ssquared.cruddemo.entity.Employee;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class World {
-    Map<Integer, Employee> employeeMap = new HashMap<>();
 
-    public void add(Integer employeeIndex, Employee employee) {
-        employeeMap.putIfAbsent(employeeIndex, employee);
+     WorldEmployee worldEmployee;
+
+    Map<Integer,WorldEmployee> worldMap =new HashMap<>();
+
+    public WorldEmployee getWorldEmployee() {
+        return worldEmployee;
     }
 
-    public Map<Integer, Employee> getEmployeeMap() {
-        return Collections.unmodifiableMap(employeeMap);
+    public void setWorldEmployee(WorldEmployee worldEmployee) {
+        this.worldEmployee = worldEmployee;
     }
+
+    public void addWorldEmployee(Integer Index, WorldEmployee worldEmployee)
+    {
+
+        worldMap.putIfAbsent(Index, worldEmployee);
+    }
+
+    public Map<Integer, WorldEmployee> getWorldEmployeeMap()
+    {
+        return Collections.unmodifiableMap(worldMap);
+    }
+
+
+
 }
