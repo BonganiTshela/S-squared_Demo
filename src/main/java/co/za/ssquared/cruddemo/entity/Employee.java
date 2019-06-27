@@ -12,7 +12,7 @@ public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
 
     @Column(name = "first_name")
@@ -27,7 +27,7 @@ public class Employee implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "address_id")
-    private Address address;
+    private Address addressIndex;
 
     //define constructors
 
@@ -35,20 +35,20 @@ public class Employee implements Serializable {
 
     }
 
-    public Employee(String firstName, String lastName, String email) {
+    public Employee(String firstName, String lastName, String email, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.addressIndex = address;
     }
-
 
     //getters and setters
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -77,11 +77,11 @@ public class Employee implements Serializable {
     }
 
     public Address getAddress() {
-        return address;
+        return addressIndex;
     }
 
     public void setAddress(Address address) {
-        this.address = address;
+        this.addressIndex = address;
     }
 
     //toString

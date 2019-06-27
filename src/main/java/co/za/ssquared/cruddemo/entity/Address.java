@@ -10,7 +10,7 @@ public class Address implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
     @Column(name = "street_name")
     private String streetName;
     @Column(name = "city_name")
@@ -31,11 +31,11 @@ public class Address implements Serializable {
         this.country = country;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
