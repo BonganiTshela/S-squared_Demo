@@ -1,2 +1,0 @@
-Feature: Get Features
-  Background:

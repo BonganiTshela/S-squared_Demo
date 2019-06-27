@@ -1,9 +1,9 @@
 package co.za.ssquared.cruddemo.service;
 
+
 import co.za.ssquared.cruddemo.dao.EmployeeRepository;
 import co.za.ssquared.cruddemo.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +21,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-  
     public List<Employee> findAll() {
         return employeeRepository.findAll();
     }
@@ -53,5 +52,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional
     public void deletByid(int theId) {
         employeeRepository.deleteById(theId);
+    }
+
+    @Override
+    public Employee findByFirstName(String firstName) {
+        return employeeRepository.findByFirstName(firstName);
     }
 }
